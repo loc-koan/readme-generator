@@ -8,33 +8,48 @@ function promptUser() {
     return inquirer.prompt([
         {
             type: 'input',
-            name: 'name',
-            message: 'What is your name?',
+            name: 'repoTitle',
+            message: 'What is your project title?',
         },
         {
             type: 'input',
-            name: 'location',
-            message: 'Where are you from?',
+            name: 'repoDescription',
+            message: 'Describe this repository/application/project?',
         },
         {
             type: 'input',
-            name: 'hobby',
-            message: 'What is your favorite hobby?',
+            name: 'repoInstallation',
+            message: 'Describe the steps needed for installation?',
         },
         {
             type: 'input',
-            name: 'food',
-            message: 'What is your favorite food?',
+            name: 'repoUsage',
+            message: 'Describe how this repository should be utilized?',
         },
         {
             type: 'input',
-            name: 'github',
-            message: 'Enter your GitHub Username',
+            name: 'repoLicense',
+            message: 'Which license would you like to add?',
         },
         {
             type: 'input',
-            name: 'linkedin',
-            message: 'Enter your LinkedIn URL.',
+            name: 'repoContribution',
+            message: 'Enter any contribution instructions or credits.',
+        },
+        {
+            type: 'input',
+            name: 'repoTesting',
+            message: 'Describe any test instructions.',
+        },
+        {
+            type: 'input',
+            name: 'repoGithub',
+            message: 'What is your GitHub Username?',
+        },
+        {
+            type: 'input',
+            name: 'repoEmail',
+            message: 'What is your email address?',
         },
     ]);
 }
