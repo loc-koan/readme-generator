@@ -1,9 +1,12 @@
+/* node js and npm installed needed */
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
 
+/* writes the file */
 const writeFileAsync = util.promisify(fs.writeFile);
 
+/* start of questions*/
 function promptUser() {
     return inquirer.prompt([
         {
@@ -30,6 +33,15 @@ function promptUser() {
             type: 'input',
             name: 'repoLicense',
             message: 'Which license would you like to add?',
+            choices: [
+                "GNU AGPLv3",
+                "Mozilla Public License",
+                "Apache License",
+                "MIT License",
+                "Boost Software License",
+                "The Unlicense",
+                "None",
+            ],
         },
         {
             type: 'input',
@@ -54,42 +66,13 @@ function promptUser() {
     ]);
 }
 
-function generateHTML(answers) {
-    return `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <title>Document</title>
-</head>
-<body>
-  <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Hi! My name is ${answers.name}</h1>
-    <p class="lead">I am from ${answers.location}.</p>
-    <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
-    <ul class="list-group">
-      <li class="list-group-item">My GitHub username is ${answers.github}</li>
-      <li class="list-group-item"><a href="https://linkedin.com/in/${answers.linkedin}">LinkedIn: ${answers.linkedin}</a></li>
-    </ul>
-  </div>
-</div>
-</body>
-</html>`;
-}
-
+/* funtion to initialize program */ 
 async function init() {
-    console.log('hi');
     try {
         const answers = await promptUser();
+        await writeFileAsync('README.md', readMeInfo);
 
-        const html = generateHTML(answers);
-
-        await writeFileAsync('index.html', html);
-
-        console.log('Successfully wrote to index.html');
+        console.log('Successfully wrote readme file');
     } catch (err) {
         console.log(err);
     }
