@@ -1,7 +1,7 @@
 /* function to generate markdown for README */
 function generateMarkdown(userAnswers) {
-    console.log(userAnswers);
-    console.log(readmeAnswers);
+    // console.log(userAnswers);
+    // console.log(readmeAnswers);
 
     return `# ${userAnswers.repoTitle}
 

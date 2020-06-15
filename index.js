@@ -74,12 +74,14 @@ async function init() {
     try {
         const userAnswers = await promptUser();
         const readmeAnswers = generateMarkdown(userAnswers);
+        
         await writeFileAsync('README-generated.md', readmeAnswers);
 
         console.log('Successfully wrote readme file');
     } catch (err) {
         console.log(err);
     }
+    // console.log(readmeAnswers);
 }
 
 init();
