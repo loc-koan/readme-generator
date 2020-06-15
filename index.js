@@ -3,6 +3,8 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
 
+/* calls markdown file */
+const generateMarkdown = require("./markdown.js");
 /* writes the file */
 const writeFileAsync = util.promisify(fs.writeFile);
 
@@ -34,13 +36,13 @@ function promptUser() {
             name: 'repoLicense',
             message: 'Which license would you like to add?',
             choices: [
-                "GNU AGPLv3",
-                "Mozilla Public License",
-                "Apache License",
-                "MIT License",
-                "Boost Software License",
-                "The Unlicense",
-                "None",
+                'GNU AGPLv3',
+                'Mozilla Public License',
+                'Apache License',
+                'MIT License',
+                'Boost Software License',
+                'The Unlicense',
+                'None',
             ],
         },
         {
@@ -66,11 +68,12 @@ function promptUser() {
     ]);
 }
 
-/* funtion to initialize program */ 
+/* funtion to initialize program */
 async function init() {
     try {
-        const answers = await promptUser();
-        await writeFileAsync('README.md', readMeInfo);
+        const userAnswers = await promptUser();
+        const readmeAnswers = generateMarkdown(userAnswers);
+        await writeFileAsync('README-generated.md', readmeAnswers);
 
         console.log('Successfully wrote readme file');
     } catch (err) {
