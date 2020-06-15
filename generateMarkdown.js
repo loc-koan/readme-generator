@@ -1,7 +1,9 @@
 /* function to generate markdown for README */
 function generateMarkdown(userAnswers) {
-    return 
-    `# ${userAnswers.repoTitle}
+    console.log(userAnswers);
+    console.log(readmeAnswers);
+
+    return `# ${userAnswers.repoTitle}
 
     ## Description:
     ${userAnswers.repoDescription}
@@ -32,7 +34,7 @@ function generateMarkdown(userAnswers) {
     ${userAnswers.repoTesting}
 
     ## Questions:
-    If you have any questions, I can be reached at ${userAnswers.repoGithub} or ${userAnswers.repoEmail}
+    If you have any questions, I can be reached at https://github.com/${userAnswers.repoGithub} or ${userAnswers.repoEmail}
     `;
 
 }

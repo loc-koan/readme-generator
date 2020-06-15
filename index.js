@@ -4,7 +4,8 @@ const fs = require('fs');
 const util = require('util');
 
 /* calls markdown file */
-const generateMarkdown = require("./markdown.js");
+const generateMarkdown = require("./generateMarkdown.js");
+
 /* writes the file */
 const writeFileAsync = util.promisify(fs.writeFile);
 
