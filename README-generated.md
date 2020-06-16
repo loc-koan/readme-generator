@@ -1,7 +1,7 @@
 # README
 
     ## Description:
-    test
+    Lorem ipsum dolor sit amet
 
     ## Table of Contents:
     * [Description] (#Description)
@@ -14,19 +14,19 @@
     * [Questions] (#Questions)
 
     ## Installation:
-    test
+    Lorem ipsum dolor sit amet
 
     ## Usage:
-    test
+    Lorem ipsum dolor sit amet
 
     ## License:
-    test
+    MIT
 
     ## Contributing:
-    test
+    Lorem ipsum dolor sit amet
 
     ## Tests:
-    test
+    Lorem ipsum dolor sit amet
 
     ## Questions:
     If you have any questions, I can be reached at https://github.com/loc-koan or loc.koan@yahoo.com
